@@ -1,0 +1,1049 @@
+<title>갑상선 안병증 CAS 분류 연구</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+  :root {
+    color-scheme: light;
+    --paper:      #f5f7f8;
+    --surface:    #ffffff;
+    --surface-2:  #eef1f3;
+    --ink:        #101619;
+    --ink-2:      #47545d;
+    --ink-3:      #7a8893;
+    --rule:       #dde3e7;
+    --rule-2:     #c6cfd5;
+    --accent:     #1a5a76;
+    --accent-soft:#e4eef3;
+    --ok:         #1f7a52;
+    --ok-soft:    #e2f0e9;
+    --warn:       #9a5f0d;
+    --warn-soft:  #f7eddc;
+    --bad:        #a93a36;
+    --bad-soft:   #f7e5e4;
+    --s1: #2a78d6;
+    --s2: #eb6834;
+    --s3: #1baf7a;
+    --shadow: 0 1px 2px rgba(16,22,25,.05), 0 6px 18px -10px rgba(16,22,25,.18);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --paper:      #0e1215;
+      --surface:    #161b1f;
+      --surface-2:  #1e252a;
+      --ink:        #eaeff2;
+      --ink-2:      #a5b1ba;
+      --ink-3:      #74828c;
+      --rule:       #283137;
+      --rule-2:     #3a454d;
+      --accent:     #74b8d4;
+      --accent-soft:#15303d;
+      --ok:         #4fab7e;
+      --ok-soft:    #142b21;
+      --warn:       #cf9440;
+      --warn-soft:  #2e2415;
+      --bad:        #e07d78;
+      --bad-soft:   #331c1b;
+      --s1: #3987e5;
+      --s2: #d95926;
+      --s3: #199e70;
+      --shadow: 0 1px 2px rgba(0,0,0,.4), 0 6px 18px -10px rgba(0,0,0,.7);
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --paper:      #0e1215;
+    --surface:    #161b1f;
+    --surface-2:  #1e252a;
+    --ink:        #eaeff2;
+    --ink-2:      #a5b1ba;
+    --ink-3:      #74828c;
+    --rule:       #283137;
+    --rule-2:     #3a454d;
+    --accent:     #74b8d4;
+    --accent-soft:#15303d;
+    --ok:         #4fab7e;
+    --ok-soft:    #142b21;
+    --warn:       #cf9440;
+    --warn-soft:  #2e2415;
+    --bad:        #e07d78;
+    --bad-soft:   #331c1b;
+    --s1: #3987e5;
+    --s2: #d95926;
+    --s3: #199e70;
+    --shadow: 0 1px 2px rgba(0,0,0,.4), 0 6px 18px -10px rgba(0,0,0,.7);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'IBM Plex Sans KR', system-ui, -apple-system, 'Malgun Gothic', sans-serif;
+    font-weight: 400;
+    font-size: 15.5px;
+    line-height: 1.72;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 940px;
+    margin: 0 auto;
+    padding-inline: 22px;
+    padding-block: 0 96px;
+  }
+
+  /* ---------- masthead ---------- */
+  .mast { padding-block: 56px 34px; border-bottom: 2px solid var(--ink); }
+  .eyebrow {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 11.5px; font-weight: 500;
+    letter-spacing: .14em; text-transform: uppercase;
+    color: var(--accent); margin: 0 0 18px;
+  }
+  h1 {
+    font-family: 'Gowun Batang', 'Nanum Myeongjo', serif;
+    font-weight: 700;
+    font-size: clamp(28px, 5.2vw, 43px);
+    line-height: 1.3; letter-spacing: -.01em;
+    text-wrap: balance; margin: 0 0 10px; color: var(--ink);
+  }
+  .subtitle-en {
+    font-size: 13.5px; color: var(--ink-3); line-height: 1.55;
+    max-width: 62ch; margin: 0 0 30px; font-style: italic;
+  }
+  .mast-meta {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 18px 26px; padding-top: 6px;
+  }
+  .mast-meta div { display: flex; flex-direction: column; gap: 3px; }
+  .mast-meta dt, .meta-k {
+    font-family: 'IBM Plex Mono', monospace; font-size: 10.5px;
+    letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3);
+  }
+  .meta-v { font-size: 14px; font-weight: 500; color: var(--ink); line-height: 1.45; }
+
+  /* ---------- doc note ---------- */
+  .docnote {
+    margin-block: 26px 0; padding: 18px 20px;
+    background: var(--surface); border: 1px solid var(--rule);
+    border-left: 3px solid var(--accent);
+    font-size: 14px; line-height: 1.68; color: var(--ink-2);
+  }
+  .docnote strong { color: var(--ink); font-weight: 600; }
+
+  /* ---------- sections ---------- */
+  section { padding-block: 46px 0; }
+  .sec-head { display: flex; gap: 16px; align-items: baseline; margin-bottom: 6px; }
+  .sec-num {
+    font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600;
+    color: var(--accent); flex: none; padding-top: 2px; letter-spacing: .02em;
+  }
+  h2 {
+    font-family: 'Gowun Batang', 'Nanum Myeongjo', serif;
+    font-weight: 700; font-size: clamp(21px, 3.4vw, 27px); line-height: 1.38;
+    margin: 0; color: var(--ink); text-wrap: balance;
+  }
+  .sec-rule { height: 1px; background: var(--rule-2); margin: 14px 0 22px; }
+  h3 {
+    font-size: 15.5px; font-weight: 600; color: var(--ink);
+    margin: 32px 0 10px; letter-spacing: -.005em;
+  }
+  h3:first-child { margin-top: 0; }
+  h4 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+    color: var(--ink-3); margin: 26px 0 10px;
+  }
+  p { margin: 0 0 14px; max-width: 68ch; }
+  p.wide { max-width: none; }
+  ul, ol { margin: 0 0 14px; padding-left: 20px; max-width: 68ch; }
+  li { margin-bottom: 7px; }
+  li::marker { color: var(--ink-3); }
+  strong { font-weight: 600; color: var(--ink); }
+  em { font-style: normal; background: var(--accent-soft); padding: 0 4px; border-radius: 2px; }
+  code, .mono {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: .89em; font-variant-numeric: tabular-nums;
+  }
+  code { background: var(--surface-2); padding: 1.5px 5px; border-radius: 3px; color: var(--ink-2); }
+
+  /* ---------- provenance badges ---------- */
+  .pv {
+    display: inline-flex; align-items: center; gap: 4px;
+    font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; font-weight: 600;
+    letter-spacing: .08em; text-transform: uppercase;
+    padding: 2px 6px; border-radius: 2px; white-space: nowrap;
+    vertical-align: 1.5px;
+  }
+  .pv-meas { background: var(--ok-soft);     color: var(--ok); }
+  .pv-doc  { background: var(--accent-soft); color: var(--accent); }
+  .pv-calc { background: var(--surface-2);   color: var(--ink-2); }
+  .pv-bad  { background: var(--bad-soft);    color: var(--bad); }
+  .pv-warn { background: var(--warn-soft);   color: var(--warn); }
+
+  .legend-pv {
+    display: flex; flex-wrap: wrap; gap: 8px 18px;
+    padding: 14px 18px; background: var(--surface-2);
+    border-radius: 3px; margin-bottom: 4px;
+  }
+  .legend-pv span.lbl { font-size: 12.5px; color: var(--ink-2); }
+
+  /* ---------- tables ---------- */
+  .tbl-wrap { overflow-x: auto; margin: 0 0 18px; -webkit-overflow-scrolling: touch; }
+  table {
+    width: 100%; border-collapse: collapse; font-size: 13.5px;
+    min-width: 460px; background: var(--surface);
+  }
+  caption {
+    caption-side: top; text-align: left; font-size: 12px; color: var(--ink-3);
+    padding-bottom: 8px; font-family: 'IBM Plex Mono', monospace; letter-spacing: .03em;
+  }
+  th, td { padding: 9px 12px; text-align: left; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  thead th {
+    font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; font-weight: 600;
+    letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3);
+    border-bottom: 1.5px solid var(--rule-2); white-space: nowrap;
+  }
+  tbody tr:last-child td { border-bottom: none; }
+  td.num, th.num { text-align: right; font-family: 'IBM Plex Mono', monospace; font-variant-numeric: tabular-nums; }
+  tr.total td { font-weight: 600; background: var(--surface-2); border-top: 1.5px solid var(--rule-2); }
+  tr.dim td { color: var(--ink-3); }
+
+  /* inline meter inside table cell */
+  .meter { display: flex; align-items: center; gap: 8px; min-width: 132px; }
+  .meter-track { flex: 1; height: 6px; background: var(--surface-2); border-radius: 3px; overflow: hidden; }
+  .meter-fill { height: 100%; border-radius: 3px; background: var(--accent); }
+  .meter-val { font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: var(--ink-2); font-variant-numeric: tabular-nums; flex: none; }
+
+  /* ---------- stat row ---------- */
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin-bottom: 26px; }
+  .stat { background: var(--surface); padding: 18px 18px 16px; display: flex; flex-direction: column; gap: 5px; }
+  .stat .k { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .09em; text-transform: uppercase; color: var(--ink-3); display: flex; align-items: center; gap: 6px; }
+  .swatch { width: 9px; height: 9px; border-radius: 2px; flex: none; }
+  .stat .v { font-family: 'IBM Plex Mono', monospace; font-size: 27px; font-weight: 500; letter-spacing: -.02em; font-variant-numeric: tabular-nums; line-height: 1.1; }
+  .stat .n { font-size: 11.5px; color: var(--ink-3); line-height: 1.45; }
+
+  /* ---------- figure ---------- */
+  figure { margin: 0 0 26px; background: var(--surface); border: 1px solid var(--rule); padding: 20px 18px 16px; }
+  figure svg { display: block; width: 100%; height: auto; max-width: 100%; }
+  figcaption { font-size: 12.5px; color: var(--ink-3); line-height: 1.6; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--rule); max-width: 74ch; }
+  .fig-title { font-size: 14px; font-weight: 600; color: var(--ink); margin-bottom: 3px; }
+  .fig-sub { font-size: 12px; color: var(--ink-3); margin-bottom: 16px; }
+  .chart-legend { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-bottom: 14px; }
+  .chart-legend span { display: inline-flex; align-items: center; gap: 7px; font-size: 12px; color: var(--ink-2); }
+
+  /* ---------- pipeline diagram ---------- */
+  .pipe { display: flex; flex-wrap: wrap; align-items: stretch; gap: 12px; margin-bottom: 6px; }
+  .pipe-box { background: var(--surface); border: 1px solid var(--rule-2); padding: 14px 16px; flex: 1 1 220px; min-width: 0; }
+  .pipe-box.frozen { border-style: dashed; background: var(--surface-2); }
+  .pipe-k { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .09em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 6px; }
+  .pipe-t { font-size: 14.5px; font-weight: 600; margin-bottom: 3px; }
+  .pipe-d { font-size: 12px; color: var(--ink-2); line-height: 1.55; }
+  .heads { display: grid; grid-template-columns: repeat(auto-fit, minmax(148px, 1fr)); gap: 8px; flex: 2 1 340px; }
+  .head-chip { background: var(--surface); border: 1px solid var(--rule-2); border-left: 3px solid var(--accent); padding: 9px 12px; }
+  .head-chip .hc-t { font-size: 12.5px; font-weight: 600; }
+  .head-chip .hc-d { font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: var(--ink-3); }
+
+  pre {
+    background: var(--surface-2); border: 1px solid var(--rule); border-radius: 3px;
+    padding: 14px 16px; overflow-x: auto; margin: 0 0 16px;
+    font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; line-height: 1.65;
+    color: var(--ink-2); font-variant-numeric: tabular-nums;
+  }
+
+  /* ---------- issue cards ---------- */
+  .issue { background: var(--surface); border: 1px solid var(--rule); border-top: 3px solid var(--bad); padding: 18px 20px; margin-bottom: 14px; }
+  .issue.mid { border-top-color: var(--warn); }
+  .issue-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px; margin-bottom: 8px; }
+  .issue-id { font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 600; color: var(--bad); letter-spacing: .06em; }
+  .issue.mid .issue-id { color: var(--warn); }
+  .issue-t { font-size: 15px; font-weight: 600; }
+  .issue p { font-size: 13.5px; margin-bottom: 9px; }
+  .issue p:last-child { margin-bottom: 0; }
+  .fix { font-size: 13px; color: var(--ink-2); padding-top: 9px; border-top: 1px dashed var(--rule-2); }
+  .fix b { font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); font-weight: 600; margin-right: 8px; }
+
+  /* ---------- callout ---------- */
+  .callout { background: var(--accent-soft); border-left: 3px solid var(--accent); padding: 16px 20px; margin: 0 0 20px; font-size: 14.5px; line-height: 1.68; }
+  .callout p:last-child { margin-bottom: 0; }
+  .callout .lead { font-weight: 600; color: var(--ink); }
+
+  /* ---------- appendix ---------- */
+  .appendix { border-top: 2px solid var(--ink); margin-top: 56px; }
+  .kv { display: grid; grid-template-columns: minmax(96px, auto) 1fr; gap: 6px 20px; font-size: 13.5px; margin-bottom: 18px; }
+  .kv dt { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .05em; color: var(--ink-3); text-transform: uppercase; padding-top: 4px; }
+  .kv dd { margin: 0; }
+
+  footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--rule); font-size: 12px; color: var(--ink-3); line-height: 1.7; }
+
+  @media (max-width: 560px) {
+    body { font-size: 15px; }
+    .sec-head { gap: 11px; }
+    th, td { padding: 8px 9px; }
+  }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+</style>
+
+<div class="wrap">
+
+  <header class="mast">
+    <p class="eyebrow">전자공학종합설계 · 영남대학교병원 안과 임상협력</p>
+    <h1>딥러닝 기반 안구 사진을 이용한 갑상선 안병증(TAO)의 임상 활성도 점수(CAS) 항목별 자동 분류</h1>
+    <p class="subtitle-en">Deep Learning-based Per-Item Classification of the Clinical Activity Score for Thyroid-Associated Ophthalmopathy from Ocular Photographs</p>
+    <div class="mast-meta">
+      <div><span class="meta-k">저자</span><span class="meta-v">윤석윤 · 한경빈 · 장준표<br>김효동 · 정수하</span></div>
+      <div><span class="meta-k">지도 / TA</span><span class="meta-v">윤병주 교수 / 정진우</span></div>
+      <div><span class="meta-k">임상 협력</span><span class="meta-v">영남대학교병원 안과<br>손준혁 교수 · 임지남 전문의</span></div>
+      <div><span class="meta-k">기간</span><span class="meta-v">2026.03 ~ 진행 중</span></div>
+      <div><span class="meta-k">1차 논문</span><span class="meta-v">2026.06.22 작성 완료</span></div>
+    </div>
+  </header>
+
+  <div class="docnote">
+    <strong>이 문서의 범위.</strong> 1차 연구(2026.06 논문)의 내용을 논문 개정과 발표를 위해 재정리하고,
+    각 수치를 프로젝트 폴더의 원본 파일과 대조해 검증한 결과를 함께 기록한다.
+    검증 과정에서 <strong>논문 기술과 실제 데이터가 어긋나는 지점 3건</strong>이 확인되었으며 7장에 별도로 모았다.
+    환자 실명·차트번호 등 개인식별정보는 일절 포함하지 않는다.
+  </div>
+
+  <div class="legend-pv" style="margin-top:22px">
+    <span class="lbl">출처 표기 —</span>
+    <span class="lbl"><span class="pv pv-meas">실측</span> 원본 파일 직접 카운트</span>
+    <span class="lbl"><span class="pv pv-doc">논문</span> 논문 본문 기재</span>
+    <span class="lbl"><span class="pv pv-calc">산출</span> 원본에서 재계산</span>
+    <span class="lbl"><span class="pv pv-bad">불일치</span> 논문 ≠ 데이터</span>
+    <span class="lbl"><span class="pv pv-warn">미확인</span> 근거 없음</span>
+  </div>
+
+  <!-- ========== 1 ========== -->
+  <section>
+    <div class="sec-head"><span class="sec-num">1</span><h2>연구 개요</h2></div>
+    <div class="sec-rule"></div>
+
+    <p>갑상선 안병증(TAO)은 안와 자가면역 질환으로, 활성기에 항염증 치료의 반응성이 높아 조기 발견이 예후를 좌우한다.
+      활성도의 국제 표준 지표인 <strong>CAS(Clinical Activity Score)</strong>는 7개 임상 징후의 합산 점수이고 <strong>총점 3점 이상을 활성기</strong>로 본다.
+      그러나 각 항목을 전문의가 육안으로 판정하므로 평가자 주관이 개입하고, 안과 전문의가 없는 환경에서는 평가 자체가 불가능하다.</p>
+
+    <p>본 연구는 <strong>안구 사진만으로 CAS 항목별 정상/비정상을 자동 분류하는 모델</strong>을 개발하고,
+      소규모 의료 데이터에서 비전 파운데이션 모델과 데이터 증강이 갖는 효용과 한계를 환자 단위 교차검증으로 정량 평가했다.</p>
+
+    <div class="callout">
+      <p class="lead">한 문장 요약</p>
+      <p>DINOv2 ViT-B/14를 동결한 특징 추출기로 쓰고 CAS 항목별 이진 헤드 4개를 얹어 학습한 결과,
+        단일 분할에서는 거시 AUROC 0.7788이 나왔으나 환자 단위 5-겹 교차검증의 OOF는 0.6003에 그쳤고,
+        GAN 합성 증강은 이를 0.5549로 오히려 떨어뜨렸다.
+        <strong>세 실험이 공통으로 가리킨 병목은 모델 구조가 아니라 실제 라벨 데이터의 절대량이다.</strong></p>
+    </div>
+  </section>
+
+  <!-- ========== 2 ========== -->
+  <section>
+    <div class="sec-head"><span class="sec-num">2</span><h2>문제 정의와 본 연구의 위치</h2></div>
+    <div class="sec-rule"></div>
+
+    <h3>최종 목표 시스템</h3>
+    <p>웹캠이 연결된 PC 프로그램 또는 모바일 애플리케이션으로 배포하는 <strong>자가 선별 시스템</strong>을 목표로 한다.
+      고가 장비 없이 환자가 활성기 여부를 1차로 확인하고 내원 시점을 판단하도록 돕는 것이 목적이며,
+      동작 방식은 <strong>문진과 영상 분류를 결합한 하이브리드</strong>다.</p>
+
+    <p>핵심은 <em>AI가 풀 수 있는 항목과 없는 항목을 먼저 갈라낸 것</em>이다.
+      CAS 1·2는 환자의 주관적 통증 호소이므로 어떤 모델로도 영상에서 판별할 수 없다. 억지로 모델에 넣지 않고 문진 경로로 분리했다.</p>
+
+    <div class="tbl-wrap">
+      <table>
+        <caption>표 1 — CAS 7개 항목의 획득 경로와 1차 연구 대상 범위</caption>
+        <thead>
+          <tr><th style="width:3.5em">항목</th><th>임상 징후</th><th>획득 경로</th><th>1차 연구</th></tr>
+        </thead>
+        <tbody>
+          <tr class="dim"><td class="num">CAS 1</td><td>안구의 통증</td><td>환자 문진</td><td>대상 아님 (주관적 호소)</td></tr>
+          <tr class="dim"><td class="num">CAS 2</td><td>안구 운동 시 통증</td><td>환자 문진</td><td>대상 아님 (주관적 호소)</td></tr>
+          <tr><td class="num">CAS 3</td><td>안검 발적</td><td>영상 분류</td><td>학습 · 평가</td></tr>
+          <tr><td class="num">CAS 4</td><td>결막 발적</td><td>영상 분류</td><td>학습 · 평가</td></tr>
+          <tr><td class="num">CAS 5</td><td>안검 부종</td><td>영상 분류</td><td>학습 · 평가</td></tr>
+          <tr class="dim"><td class="num">CAS 6</td><td>결막 부종</td><td>영상 분류</td><td><strong style="color:var(--warn)">제외</strong> — 비정상 사례 0건</td></tr>
+          <tr><td class="num">CAS 7</td><td>눈물언덕 염증</td><td>영상 분류</td><td>학습 · 평가</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p><strong>시스템 설계는 5개 항목(CAS 3~7), 1차 연구에서 실제 학습·평가한 것은 4개 항목(CAS 3·4·5·7)이다.</strong>
+      CAS 6은 수집 데이터 31명 전원에서 비정상 사례가 0건이라 학습 자체가 불가능했다.
+      <span class="pv pv-meas">실측</span> — 이 사실은 <code>TED_Data/</code> 31개 환자 폴더 전수 확인으로 검증했다(논문은 기술만 하고 근거 수치는 제시하지 않음).</p>
+
+    <h3>선행 연구와의 관계</h3>
+    <p>직접적 기반은 영남대학교 대학원 의학과 박사학위 논문(Bin Fan, 지도교수 손준혁, 2026.02)이다.
+      선행 파이프라인은 <code>MediaPipe → DeepLabV3+(ResNet-101) → ResNet-18</code> 구조이고,
+      본 연구는 후속 계획서가 제시한 방향 중 <strong>(i) 분류 백본의 고도화</strong>와 <strong>데이터 확보·증강 전략의 검증</strong>을 맡는다.</p>
+    <p>차별점은 세 가지다 — ① 경량 CNN(ResNet-18)을 자기지도 비전 파운데이션 모델(DINOv2)로 교체,
+      ② 선행 연구에 없던 <strong>환자 단위 교차검증</strong>으로 일반화 성능을 엄밀히 평가,
+      ③ GAN 합성 증강의 효용을 정량적으로 반증.</p>
+  </section>
+
+  <!-- ========== 3 ========== -->
+  <section>
+    <div class="sec-head"><span class="sec-num">3</span><h2>데이터</h2></div>
+    <div class="sec-rule"></div>
+
+    <h3>3.1 수집 프로토콜과 실제 확보량</h3>
+    <p>환자 1인당 <strong>좌안·우안 × 좌/우/상/하 4방향 응시 = 8장</strong>을 기준으로 설계했다.
+      한 방향에서만 촬영하면 안검·결막·눈물언덕이 가려지는 각도가 생기기 때문이다.</p>
+
+    <div class="stats">
+      <div class="stat"><span class="k">환자 수</span><span class="v">31</span><span class="n">명 · <span class="pv pv-meas">실측</span></span></div>
+      <div class="stat"><span class="k">안구 영상</span><span class="v">294</span><span class="n">장 · 논문 표기와 일치</span></div>
+      <div class="stat"><span class="k">환자별 편차</span><span class="v">2–14</span><span class="n">장 · 설계 기준치는 8장</span></div>
+      <div class="stat"><span class="k">수집 기간</span><span class="v">08.11<span style="font-size:15px">–</span>08.28</span><span class="n">2025년 · 1차분</span></div>
+    </div>
+
+    <p>설계 기준치 248장(31×8)과 실제 294장이 다르고, 환자별로도 2~14장의 편차가 있다.
+      <strong>연구 진행 중 촬영 프로토콜이 바뀌었기 때문</strong>이다 — 초기 환자는 프로토콜 확정 전이라 2~4장, 후반부는 10~14장이다.
+      <span class="pv pv-meas">실측</span></p>
+    <p><strong>표기 원칙: "환자 31명, 안구 영상 294장"을 기본으로 쓴다.</strong> 248장은 설계 기준치일 뿐이므로 단독으로 쓰지 않는다.</p>
+
+    <h3>3.2 라벨링 — 두 평가자 합집합(Union)</h3>
+    <p>두 전문의가 각각 단독으로 CAS 항목별 정상/비정상을 판정하고,
+      <strong>한 평가자라도 비정상으로 판정하면 비정상</strong>으로 라벨링하는 합집합 규칙을 적용했다. 비정상 징후를 누락하지 않기 위한 선택이다.</p>
+    <p><span class="pv pv-calc">산출</span> 정답지 원본 2개 시트를 전수 대조한 결과, 종합 정답지가 두 원본의 <code>OR</code> 연산과 100쌍 전부에서 일치함을 프로그램으로 확인했다.</p>
+
+    <div class="tbl-wrap">
+      <table>
+        <caption>표 2 — 평가자 간 판정 불일치 (환자 20명 × 5개 항목 = 100쌍)</caption>
+        <thead><tr><th>기준</th><th class="num">값</th><th>비고</th></tr></thead>
+        <tbody>
+          <tr><td>총 판정 쌍</td><td class="num">100</td><td>환자 20명 × 항목 5개</td></tr>
+          <tr><td>항목 단위 불일치</td><td class="num">6 (6.0%)</td><td>CAS 3: 2 / CAS 4: 3 / CAS 5: 1 / CAS 6·7: 0</td></tr>
+          <tr><td>총점이 갈린 환자</td><td class="num">4 / 20 (20%)</td><td>1↔0, 4↔3, 1↔2, 3↔4</td></tr>
+          <tr class="total"><td>활성기 판정이 뒤집힌 환자</td><td class="num">0 / 20</td><td>총점은 갈렸으나 3점 경계는 넘지 않음</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout">
+      <p><strong>서술 주의.</strong> "전문의 두 명이 같은 환자를 봐도 총점이 20%에서 갈렸다"는 사실이지만,
+        <strong>활성/비활성이라는 최종 결론이 뒤집힌 사례는 이 20명 표본에서 0건</strong>이다.
+        "진단 결론이 갈렸다"고 쓰면 과장이 된다. 결론이 뒤집힌 근거는 8장의 후속 데이터(62명)에 있다.</p>
+    </div>
+
+    <h3>3.3 항목별 분포 — 유효 표본은 294가 아니라 31이다</h3>
+    <p><span class="pv pv-meas">실측</span> <code>TED_Data/</code>의 라벨 폴더 구조에서 환자별 항목 라벨을 복원해 확인한 결과,
+      <strong>한 환자 안에서 normal과 abnormal이 섞인 항목이 0건</strong>이다.
+      즉 라벨은 영상 단위가 아니라 <strong>환자 단위</strong>로 붙고, 그 환자의 영상 전체에 그대로 복사된다.</p>
+
+    <div class="tbl-wrap">
+      <table>
+        <caption>표 3 — 항목별 정상/비정상 분포 (영상 294장 기준) 및 비정상 환자 수</caption>
+        <thead>
+          <tr><th>항목</th><th>임상 징후</th><th class="num">정상</th><th class="num">비정상</th><th style="min-width:160px">비정상 환자 (31명 중)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="num">CAS 3</td><td>안검 발적</td><td class="num">234</td><td class="num">60</td>
+            <td><div class="meter"><div class="meter-track"><div class="meter-fill" style="width:22.6%"></div></div><span class="meter-val">7명</span></div></td></tr>
+          <tr><td class="num">CAS 4</td><td>결막 발적</td><td class="num">176</td><td class="num">118</td>
+            <td><div class="meter"><div class="meter-track"><div class="meter-fill" style="width:38.7%"></div></div><span class="meter-val">12명</span></div></td></tr>
+          <tr><td class="num">CAS 5</td><td>안검 부종</td><td class="num">114</td><td class="num">180</td>
+            <td><div class="meter"><div class="meter-track"><div class="meter-fill" style="width:64.5%"></div></div><span class="meter-val">20명</span></div></td></tr>
+          <tr><td class="num">CAS 7</td><td>눈물언덕 염증</td><td class="num">242</td><td class="num">52</td>
+            <td><div class="meter"><div class="meter-track"><div class="meter-fill" style="width:19.4%"></div></div><span class="meter-val">6명</span></div></td></tr>
+          <tr class="dim"><td class="num">CAS 6</td><td>결막 부종</td><td class="num">294</td><td class="num">0</td>
+            <td><div class="meter"><div class="meter-track"></div><span class="meter-val">0명</span></div></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>이 표의 오른쪽 열이 이 연구 전체의 제약 조건이다.
+      <strong>CAS 7의 비정상 환자는 6명뿐이고, 5-겹 교차검증에서는 fold당 1명</strong>이 된다.
+      AUROC라는 통계량 자체가 성립하기 어려운 규모다. 결과 해석은 이 사실 위에서 이루어져야 한다.</p>
+
+    <h3>3.4 데이터 자산 현황</h3>
+    <div class="tbl-wrap">
+      <table>
+        <caption>표 4 — 프로젝트 폴더별 실측 결과와 역할</caption>
+        <thead><tr><th>경로</th><th>구성 (실측)</th><th>역할</th></tr></thead>
+        <tbody>
+          <tr><td><code>실습/data_origin/</code></td><td>31명 · 294장</td><td>논문 기준 정제 데이터셋</td></tr>
+          <tr><td><code>TED_Data/</code></td><td>jpg 1,948 · json 172<br><span style="color:var(--ink-3);font-size:12px">= 296장 × 6 (원본 + 항목 5개) + 주석본 172</span></td><td><strong>실제 학습 라벨의 원천</strong><br>환자 → 항목 → normal/abnormal → 좌/우 구조</td></tr>
+          <tr><td><code>final_dataset-.../</code></td><td>2,276장<br><span style="color:var(--ink-3);font-size:12px">= 원본 296 + 변환증강 1,480 + GAN 500</span></td><td>증강 실험용 학습셋</td></tr>
+          <tr><td><code>안구 추가 사진/</code></td><td>대상자 100명 · 정리본 932장</td><td><strong>후속 연구 수집분</strong> (8장 참조)</td></tr>
+          <tr><td><code>CAS_Union_Ground_Truth.xlsx</code></td><td>20명 · 3시트</td><td>평가자별 원본 정답지<br><strong style="color:var(--bad)">개인식별정보 포함 — 외부 공개 금지</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:13.5px;color:var(--ink-2)"><strong>참고.</strong> <code>TED_Data/</code>와 <code>final_dataset/</code>의 원본은 296장,
+      <code>data_origin/</code>은 294장이다. 차이는 26번 환자의 영상 2장이며 <code>data_origin</code>은 정확히 부분집합이다.
+      논문 수치는 294 기준이므로 표기는 294로 통일한다. <span class="pv pv-meas">실측</span></p>
+  </section>
+
+  <!-- ========== 4 ========== -->
+  <section>
+    <div class="sec-head"><span class="sec-num">4</span><h2>방법</h2></div>
+    <div class="sec-rule"></div>
+
+    <h3>4.1 모델 구조 — 동결 백본 + 항목별 독립 헤드</h3>
+    <p>사전 검토에서 RETFound, VisionFM, DINOv2를 비교한 뒤 <strong>모델 크기와 성능의 균형</strong>을 이유로 DINOv2 ViT-B/14(+4 registers)를 특징 추출기로 채택했다.</p>
+
+    <div class="pipe">
+      <div class="pipe-box frozen">
+        <div class="pipe-k">백본 · 동결</div>
+        <div class="pipe-t">DINOv2 ViT-B/14</div>
+        <div class="pipe-d">입력 518×518 → 37×37 패치<br>출력 768차원 특징 벡터<br><strong>87.4M · 학습하지 않음</strong></div>
+      </div>
+      <div class="heads">
+        <div class="head-chip"><div class="hc-t">CAS 3 헤드</div><div class="hc-d">안검 발적</div></div>
+        <div class="head-chip"><div class="hc-t">CAS 4 헤드</div><div class="hc-d">결막 발적</div></div>
+        <div class="head-chip"><div class="hc-t">CAS 5 헤드</div><div class="hc-d">안검 부종</div></div>
+        <div class="head-chip"><div class="hc-t">CAS 7 헤드</div><div class="hc-d">눈물언덕 염증</div></div>
+      </div>
+    </div>
+
+    <h4>헤드 1개의 구조와 파라미터</h4>
+<pre>LayerNorm(768)          →     1,536
+Linear(768 → 256)       →   196,864
+GELU / Dropout          →         0
+Linear(256 → 1)         →       257
+──────────────────────────────────
+헤드 1개                ≈   198,657
+헤드 4개 합계            ≈   794,628   ← 학습 대상
+백본                    ≈ 87,400,000   ← 동결</pre>
+
+    <p>손실 함수는 클래스 불균형을 보정하기 위해 <strong>pos_weight를 적용한 BCEWithLogitsLoss</strong>를 썼고,
+      ROI 추출에는 MediaPipe 랜드마크 기반 정렬을 활용했다.</p>
+
+    <div class="callout">
+      <p><strong>설계 의도.</strong> 백본을 동결하면 학습 파라미터가 8,740만 → 79.5만으로 <strong>약 110분의 1</strong>이 된다.
+        환자 31명이라는 조건에서 과적합을 피하기 위한 선택이었고, 4.2절에서 보듯 이 판단은 실험으로 뒷받침된다.</p>
+    </div>
+
+    <h3>4.2 학습 전략 — 2단계</h3>
+    <div class="tbl-wrap">
+      <table>
+        <caption>표 5 — 학습 단계별 설정과 결과</caption>
+        <thead><tr><th>단계</th><th>설정</th><th>결과</th><th>판정</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Phase 2</strong></td><td>백본 동결 + 항목별 헤드만 학습<br>단일 분할: 학습 25명 / 검증 6명</td><td>거시 AUROC <strong>0.7788</strong></td><td style="color:var(--ok);font-weight:600">최종 채택</td></tr>
+          <tr><td><strong>Phase 3</strong></td><td>백본 전체 해제 후 전면 미세조정<br>약 228 샘플로 87M 파라미터 학습</td><td>학습 손실 0.04까지 하락<br>거시 AUROC <strong>0.7183</strong>으로 저하</td><td style="color:var(--bad);font-weight:600">과적합 · 폐기</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Phase 3의 실패는 <strong>ViT의 데이터 요구량에 대한 교과서적 사례</strong>다.
+      ViT는 CNN이 구조적으로 갖는 귀납 편향(locality, translation equivariance)이 없어 그것까지 데이터로 배워야 하는데,
+      228 샘플로는 불가능하다. 동결 구성이 옳았음을 자기 데이터로 확인한 셈이다.</p>
+
+    <h3>4.3 평가 프로토콜</h3>
+    <ul>
+      <li><strong>환자 단위 5-겹 교차검증</strong> (MultilabelStratifiedKFold) — 같은 환자의 영상이 학습과 검증에 동시에 들어가지 않도록 환자 단위로 분할</li>
+      <li><strong>OOF(Out-Of-Fold) 거시 평균 AUROC</strong>로 종합 성능 산출</li>
+      <li>항목별 최적 임계값은 검증 기반 보정(Youden's J 등)</li>
+      <li>평가 지표는 항목별 AUROC와 비정상 재현율(recall) 중심</li>
+    </ul>
+    <p>3.3절에서 확인했듯 라벨이 환자 단위로 붙으므로, <strong>영상 단위 분할을 쓰면 같은 라벨의 복제본이 학습·검증에 양쪽으로 새어 들어간다.</strong>
+      환자 단위 교차검증은 선택이 아니라 필수였다.</p>
+  </section>
+
+  <!-- ========== 5 ========== -->
+  <section>
+    <div class="sec-head"><span class="sec-num">5</span><h2>결과</h2></div>
+    <div class="sec-rule"></div>
+
+    <h3>5.1 세 조건의 거시 평균 AUROC</h3>
+    <div class="stats">
+      <div class="stat">
+        <span class="k"><span class="swatch" style="background:var(--s1)"></span>단일 분할</span>
+        <span class="v" style="color:var(--s1)">0.7788</span>
+        <span class="n">Phase 2 · 학습 25명 / 검증 6명<br>낙관적 추정치</span>
+      </div>
+      <div class="stat">
+        <span class="k"><span class="swatch" style="background:var(--s2)"></span>OOF · 증강 없음</span>
+        <span class="v" style="color:var(--s2)">0.6003</span>
+        <span class="n">환자 단위 5-겹 교차검증<br><strong style="color:var(--ink)">실제 일반화 성능</strong></span>
+      </div>
+      <div class="stat">
+        <span class="k"><span class="swatch" style="background:var(--s3)"></span>OOF · GAN 증강</span>
+        <span class="v" style="color:var(--s3)">0.5549</span>
+        <span class="n">합성 500장 추가<br>증강 전보다 하락</span>
+      </div>
+    </div>
+
+    <figure>
+      <div class="fig-title">그림 1 — 항목별 AUROC, 세 실험 조건 비교</div>
+      <div class="fig-sub">동일 지표(AUROC)를 평가 방식만 달리해 측정한 값이다. 파선은 우연 수준(0.5).</div>
+      <div class="chart-legend">
+        <span><span class="swatch" style="background:var(--s1)"></span>단일 분할</span>
+        <span><span class="swatch" style="background:var(--s2)"></span>OOF · 증강 없음</span>
+        <span><span class="swatch" style="background:var(--s3)"></span>OOF · GAN 증강</span>
+      </div>
+      <svg viewBox="0 0 760 330" role="img" aria-label="CAS 항목별 AUROC를 단일 분할, OOF, GAN 증강 세 조건으로 비교한 막대그래프">
+        <g stroke="var(--rule)" stroke-width="1">
+          <line x1="56" y1="290" x2="744" y2="290"/>
+          <line x1="56" y1="222.5" x2="744" y2="222.5"/>
+          <line x1="56" y1="87.5" x2="744" y2="87.5"/>
+          <line x1="56" y1="20" x2="744" y2="20"/>
+        </g>
+        <line x1="56" y1="155" x2="744" y2="155" stroke="var(--ink-3)" stroke-width="1" stroke-dasharray="5 4"/>
+        <text x="748" y="151" font-family="'IBM Plex Mono',monospace" font-size="10" fill="var(--ink-3)" text-anchor="end">우연 수준 0.5</text>
+
+        <g font-family="'IBM Plex Mono',monospace" font-size="10.5" fill="var(--ink-3)" text-anchor="end">
+          <text x="46" y="294">0.0</text>
+          <text x="46" y="226.5">0.25</text>
+          <text x="46" y="159">0.50</text>
+          <text x="46" y="91.5">0.75</text>
+          <text x="46" y="24">1.0</text>
+        </g>
+
+        <!-- CAS 3 -->
+        <path d="M89,290 L89,79.2 Q89,75.2 93,75.2 L119,75.2 Q123,75.2 123,79.2 L123,290 Z" fill="var(--s1)"/>
+        <path d="M125,290 L125,72.3 Q125,68.3 129,68.3 L155,68.3 Q159,68.3 159,72.3 L159,290 Z" fill="var(--s2)"/>
+        <path d="M161,290 L161,124 Q161,120 165,120 L191,120 Q195,120 195,124 L195,290 Z" fill="var(--s3)"/>
+        <!-- CAS 4 -->
+        <path d="M261,290 L261,57 Q261,53 265,53 L291,53 Q295,53 295,57 L295,290 Z" fill="var(--s1)"/>
+        <path d="M297,290 L297,103.9 Q297,99.9 301,99.9 L327,99.9 Q331,99.9 331,103.9 L331,290 Z" fill="var(--s2)"/>
+        <path d="M333,290 L333,109.1 Q333,105.1 337,105.1 L363,105.1 Q367,105.1 367,109.1 L367,290 Z" fill="var(--s3)"/>
+        <!-- CAS 5 -->
+        <path d="M433,290 L433,57 Q433,53 437,53 L463,53 Q467,53 467,57 L467,290 Z" fill="var(--s1)"/>
+        <path d="M469,290 L469,166.8 Q469,162.8 473,162.8 L499,162.8 Q503,162.8 503,166.8 L503,290 Z" fill="var(--s2)"/>
+        <path d="M505,290 L505,155.8 Q505,151.8 509,151.8 L535,151.8 Q539,151.8 539,155.8 L539,290 Z" fill="var(--s3)"/>
+        <!-- CAS 7 -->
+        <path d="M605,290 L605,141.6 Q605,137.6 609,137.6 L635,137.6 Q639,137.6 639,141.6 L639,290 Z" fill="var(--s1)"/>
+        <path d="M641,290 L641,184.4 Q641,180.4 645,180.4 L671,180.4 Q675,180.4 675,184.4 L675,290 Z" fill="var(--s2)"/>
+        <path d="M677,290 L677,187.7 Q677,183.7 681,183.7 L707,183.7 Q711,183.7 711,187.7 L711,290 Z" fill="var(--s3)"/>
+
+        <g font-family="'IBM Plex Mono',monospace" font-size="10" fill="var(--ink-2)" text-anchor="middle">
+          <text x="106" y="69">.795</text><text x="142" y="62">.821</text><text x="178" y="114">.630</text>
+          <text x="278" y="47">.878</text><text x="314" y="94">.704</text><text x="350" y="99">.685</text>
+          <text x="450" y="47">.878</text><text x="486" y="157">.471</text><text x="522" y="146">.512</text>
+          <text x="622" y="132">.565</text><text x="658" y="174">.406</text><text x="694" y="178">.394</text>
+        </g>
+
+        <g font-size="12.5" fill="var(--ink)" text-anchor="middle" font-weight="500" font-family="'IBM Plex Sans KR',sans-serif">
+          <text x="142" y="311">CAS 3</text>
+          <text x="314" y="311">CAS 4</text>
+          <text x="486" y="311">CAS 5</text>
+          <text x="658" y="311">CAS 7</text>
+        </g>
+        <g font-size="10.5" fill="var(--ink-3)" text-anchor="middle" font-family="'IBM Plex Sans KR',sans-serif">
+          <text x="142" y="325">안검 발적</text>
+          <text x="314" y="325">결막 발적</text>
+          <text x="486" y="325">안검 부종</text>
+          <text x="658" y="325">눈물언덕 염증</text>
+        </g>
+      </svg>
+      <figcaption><strong>읽는 법.</strong> 발적 계열(CAS 3·4)은 어떤 조건에서도 우연 수준 위에 남지만,
+        부종·염증 계열(CAS 5·7)은 교차검증으로 넘어가는 순간 0.5 아래로 무너진다.
+        GAN 증강(초록)은 네 항목 어디에서도 OOF(주황)를 개선하지 못했다.</figcaption>
+    </figure>
+
+    <figure>
+      <div class="fig-title">그림 2 — 5-겹 교차검증의 fold별 AUROC</div>
+      <div class="fig-sub">fold마다 검증 환자가 6~7명씩 바뀔 뿐인데 값이 0.48에서 0.76까지 흔들린다.</div>
+      <svg viewBox="0 0 720 118" role="img" aria-label="5개 fold의 AUROC가 0.477에서 0.755 사이에 흩어져 있는 점 그래프">
+        <g font-family="'IBM Plex Mono',monospace" font-size="10.5" fill="var(--ink-2)" text-anchor="middle">
+          <text x="197.1" y="26">fold 3 · .477</text>
+          <text x="447.1" y="26">fold 4 · .641</text>
+          <text x="621.4" y="26">fold 1 · .755</text>
+          <text x="204.6" y="44">fold 0 · .482</text>
+          <text x="579.0" y="44">fold 2 · .727</text>
+        </g>
+        <g stroke="var(--rule-2)" stroke-width="1">
+          <line x1="197.1" y1="30" x2="197.1" y2="64"/>
+          <line x1="447.1" y1="30" x2="447.1" y2="64"/>
+          <line x1="621.4" y1="30" x2="621.4" y2="64"/>
+          <line x1="204.6" y1="48" x2="204.6" y2="64"/>
+          <line x1="579.0" y1="48" x2="579.0" y2="64"/>
+        </g>
+        <line x1="80" y1="70" x2="690" y2="70" stroke="var(--rule-2)" stroke-width="1"/>
+        <g stroke="var(--surface)" stroke-width="2">
+          <circle cx="197.1" cy="70" r="6" fill="var(--s2)"/>
+          <circle cx="204.6" cy="70" r="6" fill="var(--s2)"/>
+          <circle cx="447.1" cy="70" r="6" fill="var(--s2)"/>
+          <circle cx="579.0" cy="70" r="6" fill="var(--s2)"/>
+          <circle cx="621.4" cy="70" r="6" fill="var(--s2)"/>
+        </g>
+        <g stroke="var(--rule-2)" stroke-width="1">
+          <line x1="80" y1="70" x2="80" y2="76"/>
+          <line x1="232.5" y1="70" x2="232.5" y2="76"/>
+          <line x1="385" y1="70" x2="385" y2="76"/>
+          <line x1="537.5" y1="70" x2="537.5" y2="76"/>
+          <line x1="690" y1="70" x2="690" y2="76"/>
+        </g>
+        <g font-family="'IBM Plex Mono',monospace" font-size="10" fill="var(--ink-3)" text-anchor="middle">
+          <text x="80" y="92">0.40</text>
+          <text x="232.5" y="92">0.50</text>
+          <text x="385" y="92">0.60</text>
+          <text x="537.5" y="92">0.70</text>
+          <text x="690" y="92">0.80</text>
+        </g>
+        <text x="385" y="112" font-family="'IBM Plex Sans KR',sans-serif" font-size="11.5" fill="var(--ink-3)" text-anchor="middle">fold 평균 0.616 ± 0.118 · OOF 거시 AUROC 0.6003</text>
+      </svg>
+      <figcaption>fold 0과 fold 3은 우연 수준에 거의 붙어 있고 fold 1은 0.755다.
+        표준편차 ±0.118은 "모델이 어떤 환자가 검증에 들어가느냐에 따라 완전히 달라진다"는 뜻이고,
+        환자 31명이라는 표본 크기의 직접적 귀결이다.</figcaption>
+    </figure>
+
+    <h3>5.2 수치 표</h3>
+    <div class="tbl-wrap">
+      <table>
+        <caption>표 6 — Phase 2 단일 분할 성능 (학습 25명 / 검증 6명) <span class="pv pv-doc">논문</span></caption>
+        <thead><tr><th>항목</th><th class="num">AUROC</th><th class="num">임계값</th><th class="num">비정상 재현율</th></tr></thead>
+        <tbody>
+          <tr><td>CAS 3 · 안검 발적</td><td class="num">0.7954</td><td class="num">0.121</td><td class="num">0.933</td></tr>
+          <tr><td>CAS 4 · 결막 발적</td><td class="num">0.8778</td><td class="num">0.504</td><td class="num">0.889</td></tr>
+          <tr><td>CAS 5 · 안검 부종</td><td class="num">0.8778</td><td class="num">0.612</td><td class="num">0.969</td></tr>
+          <tr><td>CAS 7 · 눈물언덕 염증</td><td class="num">0.5645</td><td class="num">0.238</td><td class="num">0.500</td></tr>
+          <tr class="total"><td>거시 평균</td><td class="num">0.7788</td><td class="num">—</td><td class="num">—</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tbl-wrap">
+      <table>
+        <caption>표 7 — GAN 증강 전후 OOF 성능 비교 <span class="pv pv-doc">논문</span></caption>
+        <thead><tr><th>구분</th><th class="num">증강 전 (DINOv2)</th><th class="num">GAN 증강 후</th><th class="num">변화</th></tr></thead>
+        <tbody>
+          <tr><td>CAS 3 · 안검 발적</td><td class="num">0.821</td><td class="num">0.6295</td><td class="num" style="color:var(--bad)">−0.192</td></tr>
+          <tr><td>CAS 4 · 결막 발적</td><td class="num">0.704</td><td class="num">0.6848</td><td class="num" style="color:var(--bad)">−0.019</td></tr>
+          <tr><td>CAS 5 · 안검 부종</td><td class="num">0.471</td><td class="num">0.5117</td><td class="num" style="color:var(--ok)">+0.041</td></tr>
+          <tr><td>CAS 7 · 눈물언덕 염증</td><td class="num">0.406</td><td class="num">0.3936</td><td class="num" style="color:var(--bad)">−0.012</td></tr>
+          <tr class="total"><td>OOF 거시 AUROC</td><td class="num">0.6003</td><td class="num">0.5549</td><td class="num" style="color:var(--bad)">−0.045</td></tr>
+          <tr class="total"><td>fold 평균</td><td class="num">0.616 ± 0.118</td><td class="num">0.5604 ± 0.0963</td><td class="num" style="color:var(--bad)">−0.056</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:13.5px;color:var(--ink-2)">CAS 5만 +0.041로 올랐으나 0.512는 여전히 우연 수준이고,
+      거시 평균과 나머지 세 항목이 모두 하락했으므로 <strong>개선으로 해석할 수 없다.</strong></p>
+
+    <h3>5.3 백본 비교 실험 <span class="pv pv-calc">산출</span></h3>
+    <p>논문 3.3절이 기준선으로 선언만 하고 결과를 제시하지 않았던 CNN 비교를 실제로 수행했다(이슈 3 해소).
+      <strong>네 백본 모두 동일한 환자 단위 5-겹 분할(시드 고정), 동일한 헤드 구조, 동일한 임계값 규칙</strong>으로 평가했다.
+      백본은 전부 동결하고 특징을 캐시했으므로 조건 간 차이는 오직 백본에서만 온다.</p>
+
+    <div class="tbl-wrap">
+      <table>
+        <caption>표 10 — 백본별 OOF 성능 (환자 31명 · 영상 294장 · 동일 fold)</caption>
+        <thead><tr><th>백본</th><th class="num">특징 차원</th><th style="min-width:150px">OOF 거시 AUROC</th><th class="num">OOF 거시 AUPRC</th><th class="num">fold 편차</th></tr></thead>
+        <tbody>
+          <tr><td>ResNet-18 <span style="color:var(--ink-3);font-size:12px">(ImageNet)</span></td><td class="num">512</td>
+            <td><div class="meter"><div class="meter-track"><div class="meter-fill" style="width:50.6%"></div></div><span class="meter-val">0.5064</span></div></td>
+            <td class="num">0.3647</td><td class="num">± 0.121</td></tr>
+          <tr><td>ResNet-50 <span style="color:var(--ink-3);font-size:12px">(ImageNet)</span></td><td class="num">2048</td>
+            <td><div class="meter"><div class="meter-track"><div class="meter-fill" style="width:58.4%"></div></div><span class="meter-val">0.5839</span></div></td>
+            <td class="num">0.4209</td><td class="num">± 0.080</td></tr>
+          <tr><td>DINOv2 ViT-S/14</td><td class="num">384</td>
+            <td><div class="meter"><div class="meter-track"><div class="meter-fill" style="width:57.3%"></div></div><span class="meter-val">0.5733</span></div></td>
+            <td class="num">0.4212</td><td class="num">± 0.084</td></tr>
+          <tr class="total"><td><strong>DINOv2 ViT-B/14</strong> <span style="color:var(--ink-3);font-size:12px">(채택 모델)</span></td><td class="num">768</td>
+            <td><div class="meter"><div class="meter-track"><div class="meter-fill" style="width:61.5%;background:var(--ok)"></div></div><span class="meter-val">0.6149</span></div></td>
+            <td class="num">0.4963</td><td class="num">± 0.066</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout">
+      <p class="lead">두 가지가 동시에 확인되었다</p>
+      <p><strong>① 백본 선택이 옳았다.</strong> DINOv2 ViT-B/14가 AUROC·AUPRC 최고이자
+        <strong>fold 편차 최저(±0.066)</strong>로 가장 안정적이다. ResNet-18 대비 +0.109, ResNet-50 대비 +0.031이다.</p>
+      <p><strong>② 논문 수치가 독립적으로 재현되었다.</strong> 논문의 OOF 거시 AUROC <strong>0.6003</strong>에 대해
+        서로 다른 시드·다른 fold 분할에서 <strong>0.6149</strong>가 나왔다. 항목별로도 CAS 3은 0.821 대 0.835,
+        CAS 7은 0.406 대 0.338로 일치한다. 파이프라인과 논문이 서로를 검증한 셈이다.</p>
+    </div>
+
+    <div class="tbl-wrap">
+      <table>
+        <caption>표 11 — 백본별 항목 OOF AUROC. 항목에 따라 결론이 정반대다</caption>
+        <thead><tr><th>항목</th><th class="num">ResNet-18</th><th class="num">ResNet-50</th><th class="num">ViT-S/14</th><th class="num">ViT-B/14</th><th class="num">양성</th></tr></thead>
+        <tbody>
+          <tr><td>CAS 3 · 안검 발적</td><td class="num">0.4353</td><td class="num">0.6029</td><td class="num">0.6775</td><td class="num" style="color:var(--ok);font-weight:600">0.8350</td><td class="num">60</td></tr>
+          <tr><td>CAS 4 · 결막 발적</td><td class="num">0.6980</td><td class="num">0.7430</td><td class="num">0.6743</td><td class="num">0.7395</td><td class="num">118</td></tr>
+          <tr><td>CAS 5 · 안검 부종</td><td class="num">0.4159</td><td class="num">0.4571</td><td class="num">0.5107</td><td class="num">0.5471</td><td class="num">180</td></tr>
+          <tr><td>CAS 7 · 눈물언덕 염증</td><td class="num">0.4762</td><td class="num" style="color:var(--ok);font-weight:600">0.5327</td><td class="num">0.4306</td><td class="num" style="color:var(--bad);font-weight:600">0.3379</td><td class="num">52</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p><strong>CAS 3은 백본이 지배한다.</strong> 0.4353 → 0.8350으로 완전한 단조 증가이고, AUPRC는 0.1836 → 0.5935로 세 배 이상이다.</p>
+    <p><strong>CAS 7은 정반대로 백본이 좋아질수록 나빠진다.</strong> ViT-B/14가 최하위(0.3379)다.
+      유력한 해석은 <strong>전역 요약의 한계</strong>다 — 백본이 좋을수록 면적이 큰 신호(안검·결막)가 특징 벡터를 지배하고,
+      사진의 1~2%를 차지하는 눈물언덕은 오히려 더 철저히 평균에 묻힌다.
+      <strong>데이터를 늘려도 구조를 바꾸지 않으면 CAS 7은 개선되지 않는다</strong>는 뜻이 된다.</p>
+    <p style="font-size:13.5px;color:var(--ink-2)">⚠️ 단, CAS 7은 비정상 환자가 6명뿐이라 이 순위 자체의 통계적 신뢰도가 낮다.
+      <strong>패턴이 가설과 일치할 뿐 아직 증명은 아니며</strong>, 항목별 ROI 분리 실험(8.3절)이 이를 검증한다.</p>
+
+    <h4>재현율을 고정했을 때의 정밀도</h4>
+    <p>임계값은 각 fold의 <strong>학습 데이터 내부에서 다시 교차검증</strong>해 "재현율 ≥ 0.95 중 정밀도 최대" 규칙으로 선택했다.
+      검증 fold는 평가에만 쓰이므로 임계값 선택으로 인한 낙관 편향이 없다.</p>
+    <div class="tbl-wrap">
+      <table>
+        <caption>표 12 — 재현율을 0.95 부근에 고정했을 때의 정밀도 변화</caption>
+        <thead><tr><th>항목</th><th class="num">ResNet-18</th><th class="num">ViT-B/14</th><th class="num">정밀도 개선</th></tr></thead>
+        <tbody>
+          <tr><td>CAS 3 · 안검 발적</td><td class="num">0.967 / 0.199</td><td class="num">0.950 / 0.308</td><td class="num" style="color:var(--ok)">+55%</td></tr>
+          <tr><td>CAS 4 · 결막 발적</td><td class="num">0.958 / 0.436</td><td class="num">0.958 / 0.456</td><td class="num" style="color:var(--ok)">+5%</td></tr>
+          <tr><td>CAS 5 · 안검 부종</td><td class="num">0.950 / 0.604</td><td class="num">0.978 / 0.618</td><td class="num" style="color:var(--ok)">+2%</td></tr>
+          <tr><td>CAS 7 · 눈물언덕 염증</td><td class="num">0.923 / 0.173</td><td class="num">0.942 / 0.179</td><td class="num" style="color:var(--ok)">+3%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>같은 민감도에서 헛경보가 얼마나 줄어드는가</strong>가 임상적으로 가장 설명하기 쉬운 형태다.
+      CAS 3에서 백본 교체만으로 정밀도가 0.199 → 0.308로 올랐다 — 놓치는 환자는 그대로 두고 불필요한 내원 권고를 55% 줄인 것이다.</p>
+  </section>
+
+  <!-- ========== 6 ========== -->
+  <section>
+    <div class="sec-head"><span class="sec-num">6</span><h2>해석과 결론</h2></div>
+    <div class="sec-rule"></div>
+
+    <h3>단일 분할과 OOF의 격차가 이 연구의 첫 번째 결론이다</h3>
+    <p>단일 분할 0.7788에서 멈췄다면 "성능 0.78 달성"으로 보고했을 것이다.
+      환자 단위 5-겹 교차검증을 돌리자 OOF 0.6003, fold 편차 ±0.118이 나왔다.
+      <strong>0.7788은 검증 구성이 유리하게 잡힌 낙관적 추정치였고, 0.6003이 실제 일반화 성능에 가깝다.</strong></p>
+    <div class="callout">
+      <p>소규모 의료 데이터에서 성능 지표를 해석할 때는 <strong>반드시 환자 단위 교차검증과 OOF 평가를 병행해야 한다</strong>는 것이
+        이 연구가 방법론적으로 제시하는 바다. 두 수치는 항상 함께 제시한다 — 격차 자체가 결과다.</p>
+    </div>
+
+    <h3>실패한 두 실험이 병목의 위치를 특정했다</h3>
+    <ol>
+      <li><strong>모델을 키워봤다</strong> — Phase 3 전면 미세조정. 228 샘플로 87M 파라미터를 학습해 과적합. <em>실패</em></li>
+      <li><strong>데이터를 늘려봤다</strong> — GAN 합성 500장 추가. 전문의 검증을 거치지 않은 합성 영상이 라벨 잡음을 유입시켜 OOF 하락. <em>실패</em></li>
+    </ol>
+    <p>두 방향이 모두 막혔다는 사실이 곧 결론이다 — <strong>병목은 모델 구조도 증강 기법도 아니라 실제 라벨 데이터의 절대량이다.</strong>
+      막연히 "데이터가 부족했다"고 말하는 것과, 두 대안을 실험으로 배제하고 그렇게 말하는 것은 다르다.</p>
+
+    <h3>항목 간 성능 격차는 백본 문제가 아니다</h3>
+    <p>OOF에서 살아남은 것은 <strong>발적 계열(CAS 3: 0.821, CAS 4: 0.704)</strong>이고 무너진 것은 <strong>부종 계열(CAS 5: 0.471, CAS 7: 0.406)</strong>이다.
+      발적은 본질적으로 국소 색 통계지만, 부종은 2D 정면 사진에서 형태·입체 정보를 요구한다.
+      <strong>이 격차는 백본을 바꿔서 해결되는 종류가 아니다.</strong>
+      CAS 7은 여기에 더해 비정상 환자가 6명뿐이라 AUROC 자체의 신뢰도가 낮다.</p>
+
+    <h3>제시한 후속 과제</h3>
+    <ul>
+      <li>다기관 협력을 통한 실제 라벨 데이터 확충 — 구체적으로 <strong>CAS 7 비정상 환자 최소 15명 추가 확보</strong></li>
+      <li>소규모 데이터에 적합한 <strong>LoRA 기반 효율적 미세조정</strong></li>
+      <li>강화학습 에이전트(DQN·PPO)를 통한 능동적 병변 탐색</li>
+      <li>히트맵 기반 XAI를 통한 진단 근거 제시</li>
+      <li>지식 증류·경량화를 통한 엣지 환경(예: Jetson Nano) 실시간 추론</li>
+    </ul>
+  </section>
+
+  <!-- ========== 7 ========== -->
+  <section>
+    <div class="sec-head"><span class="sec-num">7</span><h2>논문 개정 전 해결할 검증 이슈</h2></div>
+    <div class="sec-rule"></div>
+    <p class="wide">원본 데이터를 실측한 결과 <strong>논문 기술과 실제 데이터가 어긋나는 지점</strong>이 확인되었다.
+      후속 연구를 시작하기 전에, 그리고 논문을 개정하기 전에 처리해야 한다. 심각도 순이다.</p>
+
+    <div class="issue">
+      <div class="issue-head"><span class="issue-id">이슈 1 · 최우선</span><span class="issue-t">학습 데이터의 라벨이 Union이 아니다</span></div>
+      <p><code>TED_Data/</code>의 폴더 구조에서 환자별 항목 라벨을 복원해 정답지 3시트와 대조했다. 20명 기준 불일치 환자 수는 다음과 같다.</p>
+      <div class="tbl-wrap" style="margin-bottom:10px">
+        <table style="min-width:0">
+          <thead><tr><th>대조 대상</th><th class="num">불일치 환자</th></tr></thead>
+          <tbody>
+            <tr><td>종합 정답지 (Union)</td><td class="num">3명</td></tr>
+            <tr><td>임지남 전문의 (원본)</td><td class="num">4명</td></tr>
+            <tr class="total"><td>손준혁 교수 (원본)</td><td class="num">1명</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>불일치 3건은 <strong>전부 임 전문의만 CAS 4를 비정상으로 판정한 케이스</strong>이고, <code>TED_Data</code>는 손 교수 쪽(정상)을 따랐다.
+        논문 3.1절은 "한 평가자라도 비정상이면 비정상"이라고 기술하지만 <strong>실제 데이터는 그렇게 만들어져 있지 않다.</strong>
+        추가로 1건은 두 평가자 모두 정상으로 판정했는데 <code>TED_Data</code>에서 CAS 3 비정상으로 되어 있다(출처 불명).</p>
+      <p class="fix"><b>처리</b>Union 규칙대로 데이터를 재생성하거나, 논문의 라벨링 기술을 실제에 맞게 수정한다. 어느 쪽이든 후속 학습의 정답지가 확정되어야 한다. 발표에서 "Union 라벨 전략"을 설명한다면 이 지점이 가장 먼저 질문받을 자리다.</p>
+    </div>
+
+    <div class="issue">
+      <div class="issue-head"><span class="issue-id">이슈 2</span><span class="issue-t">GAN이 생성한 것은 2,276장이 아니라 500장이다</span></div>
+      <p>논문 3.2절은 "약 2,276장의 합성 영상을 생성"이라고 기술한다. <code>final_dataset/</code> 실측 분해는 다음과 같다.</p>
+<pre>원본                            296
+변환 증강 (_aug1 ~ _aug5)     1,480
+GAN 생성 (gen_0000~0499.png)    500   ← 실제 합성분
+────────────────────────────────────
+합계                          2,276   ← 학습셋 전체 크기</pre>
+      <p>2,276은 <strong>증강 후 학습셋 전체 크기</strong>이고 GAN 생성분은 500장이다.</p>
+      <p class="fix"><b>처리</b>논문 3.2절 문장을 "GAN 합성 500장을 포함해 학습셋을 2,276장으로 구성"으로 수정한다. 발표 자료에도 동일 적용.</p>
+    </div>
+
+    <div class="issue" style="border-top-color:var(--ok)">
+      <div class="issue-head"><span class="issue-id" style="color:var(--ok)">이슈 3 · 해소됨</span><span class="issue-t">선언만 하고 돌리지 않은 CNN 기준선</span></div>
+      <p>논문 3.3절은 "선행 연구의 경량 CNN(ResNet-18)을 기준선으로 두되…"라고 썼으나
+        <strong>4장 어디에도 ResNet-18 수치가 없었다.</strong> 즉 "ResNet-18보다 DINOv2가 낫다"는 주장에 근거가 없었다.</p>
+      <p><strong>비교 실험을 수행해 해소했다(5.3절).</strong> 동일 fold·동일 헤드·동일 임계값 규칙에서
+        ResNet-18 0.5064, ResNet-50 0.5839, DINOv2 ViT-S/14 0.5733, <strong>DINOv2 ViT-B/14 0.6149</strong>로
+        채택 모델이 전 지표 1위였다. 백본 선택의 근거가 이제 연구 내부에 존재한다.</p>
+      <p class="fix"><b>반영</b>논문 3.3절의 "기준선으로 두되"를 실제 비교 결과로 대체하고, 4장에 표 10·11을 추가한다.
+        발표에서 "CNN과 비교해보셨나요"에 답할 자료가 확보되었다.</p>
+    </div>
+
+    <div class="issue mid">
+      <div class="issue-head"><span class="issue-id">이슈 4</span><span class="issue-t">평가자별 원본 정답지는 20명분만 로컬에 있다</span></div>
+      <p>항목별 라벨 자체는 <code>TED_Data/</code>에 31명 전원분이 존재한다.
+        다만 <strong>임/손 두 평가자의 개별 판정이 남아 있는 것은 20명분</strong>(<code>AI-01-001</code>~<code>020</code>)뿐이다.</p>
+      <p class="fix"><b>처리</b>평가자 불일치율을 인용할 때는 <strong>20명 기준임을 반드시 명시</strong>한다. 나머지 11명의 평가자별 원본은 임상팀에 재요청한다.</p>
+    </div>
+
+    <div class="issue mid">
+      <div class="issue-head"><span class="issue-id">이슈 5</span><span class="issue-t">GAN 모델의 구체적 종류가 기술되지 않았다</span></div>
+      <p>논문은 "생성적 적대 신경망(GAN)"으로만 기술한다. 발표 질의응답에서 반드시 나오는 질문이다.</p>
+      <p class="fix"><b>처리</b>사용한 GAN 구조(StyleGAN 계열 여부, 학습 데이터, 학습 설정)를 확정해 3.2절에 명시한다.</p>
+    </div>
+  </section>
+
+  <!-- ========== 8 ========== -->
+  <section>
+    <div class="sec-head"><span class="sec-num">8</span><h2>후속 연구</h2></div>
+    <div class="sec-rule"></div>
+
+    <h3>8.1 확보된 추가 데이터</h3>
+    <p><span class="pv pv-meas">실측</span> <code>안구 추가 사진/</code>에 <strong>연구 대상자 100명</strong>(<code>AI-01-001</code>~<code>100</code>) 규모의 수집분이 들어와 있다.
+      1차 연구의 31명을 포함한 확장분이므로 <strong>순증은 69명</strong>이다.</p>
+
+    <div class="stats">
+      <div class="stat"><span class="k">대상자</span><span class="v">100</span><span class="n">명 · 1차 31명 포함 (순증 69명)</span></div>
+      <div class="stat"><span class="k">두 평가자 총점 확보</span><span class="v">62</span><span class="n">명 · 1차 20명의 3배</span></div>
+      <div class="stat"><span class="k">정리된 영상</span><span class="v">932</span><span class="n">장 · 별도 원본 카메라 덤프 다수</span></div>
+      <div class="stat"><span class="k">방문 기간</span><span class="v">08.11<span style="font-size:15px">–</span>10.02</span><span class="n">2025년</span></div>
+    </div>
+
+    <p>대상자 명단에는 <code>손준혁교수님 / 임지남 / 글랜디 카스 / 복시 / 통증 / AI CAS</code> 열이 있고,
+      <strong><code>AI CAS</code> 열은 전부 비어 있다</strong> — 모델 예측을 채워 넣을 자리이며 후속 연구의 산출물이 들어갈 곳이다.</p>
+
+    <h4>62명 기준 평가자 간 편차 — 1차보다 훨씬 강한 근거</h4>
+    <div class="tbl-wrap">
+      <table>
+        <caption>표 8 — 평가자 간 총점 불일치, 1차 20명 vs 후속 62명 <span class="pv pv-calc">산출</span></caption>
+        <thead><tr><th>기준</th><th class="num">1차 (20명)</th><th class="num">후속 (62명)</th></tr></thead>
+        <tbody>
+          <tr><td>총점 불일치</td><td class="num">4명 (20.0%)</td><td class="num">23명 (37.1%)</td></tr>
+          <tr class="total"><td>활성기(≥3) 판정이 뒤집힌 사례</td><td class="num">0명</td><td class="num" style="color:var(--bad)">7명 (11.3%)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>62명 기준으로는 7명에서 활성/비활성이라는 최종 진단 결론 자체가 갈린다.</strong>
+      이 연구가 왜 필요한지를 자기 데이터로 증명하는 가장 강한 근거이고, 1차 20명 표본으로는 나오지 않던 수치다.</p>
+
+    <div class="callout" style="border-left-color:var(--warn);background:var(--warn-soft)">
+      <p><strong>제약.</strong> 명단 파일에는 <strong>총점만</strong> 있고 항목별(CAS 3·4·5·7) 판정은 없다.
+        항목별 이진 분류를 학습하려면 <strong>69명분 항목별 라벨을 임상팀에서 다시 받아야 한다.</strong> 현재 가장 큰 병목이다.</p>
+    </div>
+
+    <h3>8.2 백본 비교 실험 — 완료</h3>
+    <p>ResNet-18·ResNet-50·DINOv2 ViT-S/14·ViT-B/14를 동일 조건에서 비교해 <strong>이슈 3을 해소했다.</strong>
+      결과는 5.3절에 있다. 백본이 동결 구성이라 특징을 한 번만 뽑아 캐시하면 되므로,
+      네 백본 전체를 CPU만으로 돌렸다(특징 추출: ResNet 24초, ViT-B 약 15분).</p>
+    <p>추가로 확인할 가치가 있는 조건이 둘 남아 있다.</p>
+    <ul>
+      <li><strong>선형 프로브</strong> <code>Linear(768→1)</code> — 헤드를 19.9만 → 769 파라미터로 줄인다. 환자 31명에는 현재 헤드도 과할 수 있다</li>
+      <li><strong>색 통계 기준선</strong> — ROI 내 Lab a* 평균 + 로지스틱 회귀.
+        손수 만든 발적 지표가 CAS 3에서 OOF 0.8 근처를 찍으면 <strong>"파운데이션 모델이 필요한 문제가 아니었다"</strong>는 결론이 된다.
+        실패가 아니라 GAN 증강을 반증한 것과 같은 종류의 기여다</li>
+    </ul>
+
+    <h3>8.3 다음 실험 — 항목별 ROI 분리 ⭐</h3>
+    <p>5.3절에서 <strong>CAS 7만 백본이 좋아질수록 나빠지는</strong> 역전이 관찰됐다.
+      현재 구조는 헤드 4개가 <strong>전부 동일한 768차원 전역 요약 벡터 하나</strong>를 받는다.
+      그런데 각 항목이 보아야 할 부위는 서로 다르고, 특히 눈물언덕은 사진 면적의 1~2%에 불과하다.
+      백본이 좋을수록 면적이 큰 신호가 요약을 지배하므로 작은 부위는 오히려 더 묻힌다.</p>
+
+    <div class="callout">
+      <p class="lead">ViT를 쓸 구체적 근거가 여기서 나온다</p>
+      <p>ViT는 <code>[CLS]</code> 요약 벡터만이 아니라 <strong>패치마다 토큰</strong>을 갖는다.
+        518×518 / 패치 14 → <strong>37×37 = 1,369개</strong>다. 현재는 요약 벡터 하나만 쓰고 1,369개를 버리고 있다.
+        ROI에 걸친 패치 토큰만 골라 평균하면 <strong>순전파 한 번으로 부위별 특징</strong>이 모두 나온다.</p>
+      <p>특징 격자 해상도는 ResNet-50 @224가 <strong>7×7 = 49칸</strong>, ViT-B/14 @518이 <strong>1,369칸</strong>으로
+        <strong>28배 차이</strong>다. 눈물언덕 크기의 부위를 분리하려면 이 해상도가 필요하다 —
+        "자기지도 사전학습"보다 훨씬 구체적이고 방어 가능한 ViT 채택 근거다.</p>
+    </div>
+
+    <p><strong>구현상의 걸림돌.</strong> ROI를 정의하려면 랜드마크가 필요한데,
+      <code>data_origin</code>의 눈 크롭 이미지에는 <strong>MediaPipe Face Mesh를 적용할 수 없다</strong>(얼굴이 보이지 않는다).
+      원본 얼굴 사진에서 랜드마크를 얻어 크롭 좌표로 역매핑해야 하는데 <strong>그 크롭 매핑이 기록에 없다.</strong>
+      <code>TED_Data</code>의 폴리곤 주석 172개도 비정상 사례에만 있어 ROI 정의 전체를 덮지 못한다.
+      <code>안구 추가 사진/</code>의 원본 얼굴 사진부터 크롭·ROI 파이프라인을 다시 구성하는 것이 깨끗한 경로다.</p>
+
+    <div class="callout">
+      <p class="lead">논문 개정판의 서사 축</p>
+      <p>데이터가 부족하다 → <strong>①모델을 키워봤다</strong>(전면 미세조정) → 과적합으로 실패
+        → <strong>②데이터를 늘려봤다</strong>(GAN 증강) → 라벨 잡음으로 실패
+        → <strong>③백본을 비교했다</strong>(ResNet vs DINOv2) → 백본 선택은 옳았으나 <strong>천장이 0.61</strong>
+        → <strong>④항목별로 뜯어보니</strong> CAS 3은 백본이 지배하고 CAS 7은 전역 요약 구조가 막고 있다
+        → 병목이 <strong>실제 라벨 데이터의 양</strong>과 <strong>ROI 분리 구조</strong> 둘로 특정됨</p>
+    </div>
+  </section>
+
+  <!-- ========== APPENDIX ========== -->
+  <section class="appendix">
+    <div class="sec-head" style="padding-top:42px"><span class="sec-num">부록</span><h2>발표용 개념 정리</h2></div>
+    <div class="sec-rule"></div>
+
+    <h3>ViT — 이미지를 문장처럼 다루는 모델</h3>
+    <p>Transformer는 원래 자연어 처리용이다. 2017년 「Attention Is All You Need」가 기계번역을 위해 제안했고,
+      문장을 단어(토큰) 시퀀스로 보고 self-attention으로 토큰 간 관계를 학습한다.</p>
+    <p><strong>ViT(Vision Transformer)의 아이디어는 "이미지를 문장처럼 취급하자"이다.</strong>
+      2021년 Google의 「An Image Is Worth 16×16 Words」가 제안했고, 제목이 아이디어 전부다.</p>
+
+    <dl class="kv">
+      <dt>패치 분할</dt><dd>518×518 입력을 14×14 패치로 자름 → <span class="mono">37 × 37 = 1,369개</span></dd>
+      <dt>패치 임베딩</dt><dd>각 패치(14×14×3)를 선형 변환 → 768차원 벡터. 이것이 "단어"에 해당</dd>
+      <dt>위치 임베딩</dt><dd>몇 번째 패치인지를 더함. 시퀀스 자체는 순서를 모르기 때문</dd>
+      <dt>특수 토큰</dt><dd><span class="mono">[CLS]</span> 1개 + register 4개 → 총 1,374 토큰</dd>
+      <dt>인코더</dt><dd>Transformer 블록 12개. 매 층에서 모든 패치가 모든 패치를 봄</dd>
+      <dt>출력</dt><dd><span class="mono">[CLS]</span> 토큰의 최종 벡터 = 이미지 전체를 요약한 768차원</dd>
+    </dl>
+
+    <div class="tbl-wrap">
+      <table>
+        <caption>CNN과 ViT의 본질적 차이</caption>
+        <thead><tr><th></th><th>CNN</th><th>ViT</th></tr></thead>
+        <tbody>
+          <tr><td>보는 범위</td><td>첫 층은 3×3 같은 좁은 영역, 층을 쌓으며 넓어짐</td><td><strong>첫 층부터 이미지 전체</strong></td></tr>
+          <tr><td>내장된 가정</td><td>가까운 픽셀끼리 관련 있다 / 위치가 바뀌어도 같은 물체다</td><td><strong>없음 — 데이터로 배워야 함</strong></td></tr>
+          <tr><td>데이터 요구량</td><td>적어도 잘 돌아감</td><td>많이 필요함</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>이름 규칙.</strong> <code>ViT-B/14</code> = Base 크기 / 패치 14×14.
+      크기는 S(mall) &lt; B(ase) &lt; L(arge) &lt; H(uge) 순이고, 슬래시 뒤 숫자가 작을수록 패치를 잘게 썰어 정밀하지만 토큰이 많아져 무거워진다.</p>
+    <p><strong>DINOv2.</strong> 본 연구가 쓴 것은 그냥 ViT가 아니라 Meta AI가 라벨 없는 이미지 1억 4,200만 장으로
+      <strong>자기지도 학습</strong>시킨 ViT다. "이건 고양이다"를 배운 것이 아니라 <strong>"이미지를 어떻게 표현할지"</strong> 자체를 배웠기 때문에,
+      특정 분류 과제에 묶이지 않은 범용 특징 추출기로 쓸 수 있다.</p>
+
+    <h3>백본과 헤드</h3>
+    <p><strong>백본은 "묘사하는 사람", 헤드는 "그 묘사만 읽고 판정하는 사람"이다.</strong></p>
+    <ul>
+      <li><strong>백본(backbone)</strong> — 이미지를 받아 <strong>범용 특징 벡터</strong>로 바꾼다. 과제와 무관한 요약이다.</li>
+      <li><strong>헤드(head)</strong> — 그 벡터만 받아 <strong>특정 질문의 답</strong>을 낸다. 이미지는 보지 않는다.</li>
+    </ul>
+    <p>왜 나누는가 — <strong>묘사문은 하나만 만들고 판정자는 여럿 붙일 수 있기 때문</strong>이다.
+      본 연구가 정확히 그 구조다. 하나의 768차원 벡터에서 CAS 3·4·5·7 헤드 4개가 각각 독립적으로 판정한다.
+      항목마다 독립된 결정 경계와 독립된 임계값을 갖게 하려는 설계다.</p>
+    <p>그리고 <strong>백본을 동결하면 학습 파라미터가 110분의 1로 줄어든다</strong>(8,740만 → 79.5만).
+      환자 31명이라는 조건에서 과적합을 피하는 방법이었고, 이것을 푼 Phase 3이 바로 무너진 것이 4.2절의 결과다.</p>
+
+    <h3>예상 질의응답</h3>
+    <dl class="kv">
+      <dt>Q</dt><dd><strong>데이터가 이렇게 적은데 왜 ViT를 썼나?</strong><br>
+        백본을 학습시킨 것이 아니라 <strong>이미 학습된 표현을 동결해 빌려 쓴 것</strong>이다. "ViT는 데이터가 많이 필요하다"는 명제는 처음부터 학습하거나 미세조정할 때 성립하며, 실제로 미세조정을 시도한 Phase 3은 그대로 과적합으로 실패했다.</dd>
+      <dt>Q</dt><dd><strong>CNN과 비교해봤나?</strong><br>
+        비교했다. 동일한 환자 단위 분할·동일 헤드에서 ResNet-18 <strong>0.5064</strong>, ResNet-50 <strong>0.5839</strong>,
+        DINOv2 ViT-S/14 <strong>0.5733</strong>, 채택한 ViT-B/14가 <strong>0.6149</strong>로 전 지표 1위였고 fold 편차도 가장 작았다(±0.066).
+        같은 재현율 0.95에서 CAS 3 정밀도가 0.199 → 0.308로 올라, 놓치는 환자 수는 그대로 두고 헛경보를 55% 줄였다.</dd>
+      <dt>Q</dt><dd><strong>그럼 ViT가 항상 나은가?</strong><br>
+        아니다. CAS 7(눈물언덕 염증)만은 <strong>백본이 좋아질수록 나빠졌다</strong>(ResNet-50 0.533 → ViT-B 0.338).
+        전역 요약 벡터 하나를 헤드 4개가 공유하는 현재 구조에서, 면적이 1~2%인 부위가 묻히기 때문으로 보인다.
+        항목별 ROI 분리가 다음 실험이다.</dd>
+      <dt>Q</dt><dd><strong>AUROC 0.6은 너무 낮지 않나?</strong><br>
+        낮다. 그리고 <strong>낮다는 것을 정확히 측정한 것이 이 연구의 결과</strong>다. 단일 분할 0.78에서 멈추지 않고 환자 단위 교차검증으로 0.60을 확인했으며, 그 격차의 원인이 환자 31명이라는 표본 크기임을 두 번의 실패 실험으로 특정했다.</dd>
+      <dt>Q</dt><dd><strong>왜 CAS 6은 빠졌나?</strong><br>
+        수집 데이터 31명 전원에서 비정상 사례가 0건이었다. 학습 자체가 불가능하다. 비정상 사례 확보가 후속 과제다.</dd>
+    </dl>
+  </section>
+
+  <footer>
+    <p>1차 연구 결과는 <code>갑상선안병증_CAS_분류_논문.docx</code>(2026.06.22)에 근거하며,
+      본 문서의 <span class="pv pv-meas">실측</span> · <span class="pv pv-calc">산출</span> 표기 항목은
+      <code>실습/data_origin/</code>, <code>TED_Data/</code>, <code>final_dataset-.../</code>,
+      <code>CAS_Union_Ground_Truth.xlsx</code>, <code>안구 추가 사진/</code> 원본을 직접 대조해 확인했다.</p>
+    <p>환자 실명·차트번호·이니셜 등 개인식별정보는 본 문서에 포함하지 않았다. 정답지 원본 파일은 어떤 형태로도 외부에 공개하지 않는다.</p>
+  </footer>
+
+</div>
